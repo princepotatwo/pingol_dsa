@@ -1,0 +1,37 @@
+import java.util.LinkedList;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int numDisks = 5;
+        TowerOfHanoi toh = new TowerOfHanoi(numDisks);
+        toh.solve();
+    }
+
+    static class TowerOfHanoi {
+        private final LinkedList<Integer>[] poles;
+        private final int numDisks;
+
+        public TowerOfHanoi(int numDisks) {
+            this.numDisks = numDisks;
+            poles = new LinkedList[] { new LinkedList<Integer>(), new LinkedList<Integer>(), new LinkedList<Integer>() };
+            for (int i = numDisks; i > 0; i--) {
+                poles[0].addFirst(i);
+            }
+        }
+
+        public void solve() {
+            move(numDisks, 'A', 'C', 'B');
+        }
+
+        private void move(int n, char from, char to, char via) {
+            if (n > 0) {
+                move(n - 1, from, via, to);
+                int disk = poles[from - 'A'].removeFirst();
+                poles[to - 'A'].addFirst(disk);
+                System.out.println("Disk " + disk + " moves from pole " + from + " to pole " + to);
+                move(n - 1, via, to, from);
+            }
+        }
+    }
+}
