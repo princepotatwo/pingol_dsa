@@ -1,0 +1,38 @@
+        7
+       / \
+      4   9
+     / \   \
+    1   6   11
+Inorder traversal: 1 4 6 7 9 11
+Start at the root node 7.
+Move to the left child 4.
+Move to the left child 1. Since there are no more left children, print the value 1.
+Move back to the parent node 4 and print its value 4.
+Move to the right child 6. Print the value 6.
+Move back to the parent node 7 and print its value 7.
+Move to the right child 9. Print the value 9.
+Move to the right child 11. Print the value 11.
+
+Preorder traversal: 7 4 1 6 9 11
+Start at the root node 7 and print its value.
+Move to the left child 4 and print its value.
+Move to the left child 1 and print its value.
+Move back to the parent node 4.
+Move to the right child 6 and print its value.
+Move back to the parent node 7.
+Move to the right child 9 and print its value.
+Move to the right child 11 and print its value.
+
+Postorder traversal: 1 6 4 11 9 7
+Start at the root node 7.
+Move to the left child 4.
+Move to the left child 1. Since there are no more left children, move to the right child 6.
+Print the value 1.
+Move back to the parent node 4 and print its value 4.
+Move to the right child 6 and print its value.
+Move back to the parent node 7.
+Move to the right child 9 and print its value.
+Move to the right child 11 and print its value.
+Print the value 9.
+Print the value 7.
+
